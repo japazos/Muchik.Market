@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Steeltoe.Discovery.Consul" Version="3.2.4" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="3.2.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Muchik.Market.Infrastructure.CrossCutting\Muchik.Market.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\Muchik.Market.Infrastructure.EventBusRabbitMQ\Muchik.Market.Infrastructure.EventBusRabbitMQ.csproj" />
+    <ProjectReference Include="..\Muchik.Market.Payment.Application\Muchik.Market.Payment.Application.csproj" />
+    <ProjectReference Include="..\Muchik.Market.Payment.Infrastructure\Muchik.Market.Payment.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
